@@ -124,4 +124,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  button, a[role="button"], [type="button"], [type="submit"], [type="reset"] {
+    @apply cursor-pointer disabled:cursor-not-allowed;
+  }
 }
