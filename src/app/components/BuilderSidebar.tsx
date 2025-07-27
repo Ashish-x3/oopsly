@@ -69,7 +69,6 @@ export default function BuilderSidebar({
       initial="hidden"
       animate="visible"
     >
-      {/* Presets Dropdown */}
       <motion.div variants={itemVariants} className="mb-4">
         <label className="text-sm font-semibold text-gray-800 mb-2 block">Presets</label>
         <select
@@ -95,7 +94,6 @@ export default function BuilderSidebar({
         </select>
       </motion.div>
 
-      {/* Title */}
       <motion.div variants={itemVariants} className="mb-2">
         <label className="text-sm font-semibold text-gray-800 mb-2 block">Title</label>
         <input
@@ -109,7 +107,6 @@ export default function BuilderSidebar({
         </div>
       </motion.div>
 
-      {/* Message */}
       <motion.div variants={itemVariants} className="mb-2">
         <label className="text-sm font-semibold text-gray-800 mb-2 block">Message</label>
         <textarea
@@ -124,7 +121,6 @@ export default function BuilderSidebar({
         </div>
       </motion.div>
       
-      {/* Emoji Selector */}
       <motion.div variants={itemVariants}>
         <label className="text-sm font-semibold text-gray-800 mb-2 block">Emoji</label>
         <div className="grid grid-cols-6 gap-2 mb-3">
@@ -154,7 +150,6 @@ export default function BuilderSidebar({
         )}
       </motion.div>
 
-      {/* ✨ FIX: Restored missing Button section */}
       <motion.div variants={itemVariants}>
         <label className="text-sm font-semibold text-gray-800 mb-3 block">Button</label>
         <div className="space-y-3">
@@ -173,7 +168,6 @@ export default function BuilderSidebar({
         </div>
       </motion.div>
 
-      {/* Backgrounds */}
       <motion.div variants={itemVariants}>
         <label className="text-sm font-semibold text-gray-800 mb-3 block">Background</label>
         <div className="grid grid-cols-6 gap-2">
@@ -187,7 +181,6 @@ export default function BuilderSidebar({
         </div>
       </motion.div>
 
-      {/* Reset */}
       <motion.div variants={itemVariants} className="pt-4 border-t border-black">
         <button
            onClick={() => {

@@ -14,9 +14,6 @@ export default function GeneratePage() {
     const [isFullscreen, setIsFullscreen] = useState(false);
     const [showButton, setShowButton] = useState(true);
     const [buttonText, setButtonText] = useState("Back to Reality");
-
-
-
     const isCustomColor = bgColor.startsWith("#");
 
     const pageVariants: Variants = {
@@ -85,7 +82,6 @@ export default function GeneratePage() {
                         />
                     </div>
                 </div>
-
             </motion.div>
         </div>
     );

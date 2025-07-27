@@ -4,7 +4,6 @@ import { useState, use } from "react";
 import Emoji404 from "@/app/components/Emoji404";
 import { notFound } from "next/navigation";
 
-// Updated interface for Next.js 15
 interface PreviewPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
@@ -12,10 +11,8 @@ interface PreviewPageProps {
 export default function Preview({ searchParams }: PreviewPageProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // Use the 'use' hook to resolve the Promise
   const resolvedSearchParams = use(searchParams);
 
-  // Ensure 'id' is a string before proceeding
   const id = typeof resolvedSearchParams.id === 'string' ? resolvedSearchParams.id : null;
 
   if (!id) {
@@ -56,6 +53,7 @@ export default function Preview({ searchParams }: PreviewPageProps) {
         );
     }
   } catch (e) {
+    console.log(e)
     return notFound();
   }
 }

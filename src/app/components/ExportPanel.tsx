@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-// ✨ Import framer-motion for animations
 import { motion } from "framer-motion";
 
 interface ExportPanelProps {
@@ -42,7 +41,7 @@ export default function ExportPanel({
   <p className="text-lg text-gray-600 mt-2">${message}</p>${buttonHtml}
 </div>
 `.trim();
-    
+
     const componentCode = `
 import React from 'react';
 
@@ -65,7 +64,6 @@ export default function NotFoundPage() {
     });
   };
 
-  // ✨ Animation variants for a staggered effect
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -82,8 +80,7 @@ export default function NotFoundPage() {
   };
 
   return (
-    // ✨ Wrap the main div with motion.div for animations
-    <motion.div 
+    <motion.div
       className="mt-6 border-t pt-4 px-4"
       variants={containerVariants}
       initial="hidden"
