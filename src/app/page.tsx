@@ -50,8 +50,8 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Build custom 404 pages in minutes. Drag, drop, export clean code. 
-          Your users will smile instead of leave.
+         Craft a better 404 page in seconds. Customize the vibe with emojis and colors, and export developer-ready code. Give your users a better dead end.
+
         </motion.p>
 
         {/* CTA */}
@@ -75,31 +75,40 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.0, duration: 0.6 }}
         >
-          Takes 2 minutes, no signup needed
+          no signup needed
         </motion.p>
 
-        {/* Quick Points */}
+        {/* ✨ Redesigned Quick Points Section */}
         <motion.div 
-          className="grid md:grid-cols-3 gap-8 mt-20 text-left"
+          className="grid md:grid-cols-3 gap-6 mt-20 text-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-            <div className="text-3xl mb-3">🎨</div>
-            <h3 className="font-semibold mb-2">Drag & drop editor</h3>
-            <p className="text-slate-600 text-sm">No coding needed</p>
+          <motion.div 
+            whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" }} 
+            className="p-6 bg-slate-50/50 rounded-xl"
+          >
+            <div className="text-4xl mb-3">🎨</div>
+            <h3 className="font-semibold mb-2 text-slate-800">Live visual editor</h3>
+            <p className="text-slate-600 text-sm">See your changes instantly</p>
           </motion.div>
           
-          <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-            <div className="text-3xl mb-3">⚡</div>
-            <h3 className="font-semibold mb-2">Export clean code</h3>
-            <p className="text-slate-600 text-sm">React, HTML, whatever</p>
+          <motion.div 
+            whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" }} 
+            className="p-6 bg-slate-50/50 rounded-xl"
+          >
+            <div className="text-4xl mb-3">⚡</div>
+            <h3 className="font-semibold mb-2 text-slate-800">Export clean code</h3>
+            <p className="text-slate-600 text-sm">Ready-to-use React component</p>
           </motion.div>
           
-          <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-            <div className="text-3xl mb-3">😊</div>
-            <h3 className="font-semibold mb-2">Users actually smile</h3>
+          <motion.div 
+            whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" }} 
+            className="p-6 bg-slate-50/50 rounded-xl"
+          >
+            <div className="text-4xl mb-3">😊</div>
+            <h3 className="font-semibold mb-2 text-slate-800">Users actually smile</h3>
             <p className="text-slate-600 text-sm">Instead of bouncing</p>
           </motion.div>
         </motion.div>
@@ -158,8 +167,7 @@ export default function Home() {
             <div className="text-2xl">👨‍💻</div>
             <div>
               <p className="text-slate-700 text-sm leading-relaxed">
-                "Spent 3 hours making a 404 page for a client. 
-                Thought there had to be a better way." 
+                "I got tired of coding the same simple error pages over and over. So I built this to make it fast, easy, and fun" 
               </p>
               <p className="text-slate-600 text-xs mt-2">— Ashish</p>
             </div>
@@ -168,14 +176,10 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 mt-16 py-8 text-center">
-        <div className="text-sm text-slate-500">
-          <Link href="mailto:hey@oopsly.com" className="hover:text-slate-700">
-            Questions? Say hi
-          </Link>
-          <span className="mx-4">•</span>
-          <span>Made with ☕ in 2024</span>
-        </div>
+       <footer className="border-t border-slate-200 py-8 text-center">
+        <p className="text-sm text-slate-500">
+          Built with ❤️ using Next.js, Framer Motion, and Tailwind CSS.
+        </p>
       </footer>
     </div>
   );
