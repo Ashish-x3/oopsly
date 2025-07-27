@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // app/page.tsx
 'use client';
 
@@ -26,13 +27,14 @@ export default function Home() {
       <div className="max-w-3xl mx-auto px-6 py-20 text-center">
         
         <motion.p 
-          className="text-slate-600 mb-6 text-lg"
+          className="text-7xl mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          Hey! 👋 Nobody likes boring 404 pages.
+          🦄🧙💔⚠️🧭
         </motion.p>
+        
         
         <motion.h2 
           className="text-5xl md:text-6xl font-bold leading-tight mb-8 text-slate-900"

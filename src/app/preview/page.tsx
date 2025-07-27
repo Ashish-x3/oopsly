@@ -1,14 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import Emoji404 from "@/app/components/Emoji404";
 import { notFound } from "next/navigation";
 
-export default function Preview({ searchParams }: { searchParams: { id: string } }) {
+// Updated interface for Next.js 15
+interface PreviewPageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default function Preview({ searchParams }: PreviewPageProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
+  // Use the 'use' hook to resolve the Promise
+  const resolvedSearchParams = use(searchParams);
+
+  // Ensure 'id' is a string before proceeding
+  const id = typeof resolvedSearchParams.id === 'string' ? resolvedSearchParams.id : null;
+
+  if (!id) {
+    return notFound();
+  }
+
   try {
-    const decoded = decodeURIComponent(searchParams.id);
+    const decoded = decodeURIComponent(id);
     const { title, message, layout, emoji, emojiAnim, bgColor } = JSON.parse(decoded);
 
     switch (layout) {

@@ -128,3 +128,24 @@ body {
     @apply cursor-pointer disabled:cursor-not-allowed;
   }
 }
+
+ ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #111827; 
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #f9fafb;
+  }

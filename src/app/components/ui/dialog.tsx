@@ -3,39 +3,28 @@ import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
 import { cn } from "@/app/lib/utils" 
-// ✨ Import motion and AnimatePresence from framer-motion
 import { motion } from "framer-motion"
 
 const Dialog = DialogPrimitive.Root
 const DialogTrigger = DialogPrimitive.Trigger
-
-const DialogPortal = ({ children, ...props }: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal {...props}>
-    {/* ✨ Centering container for the dialog */}
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {children}
-    </div>
-  </DialogPrimitive.Portal>
-)
+const DialogPortal = DialogPrimitive.Portal
 
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-  // ✨ Animate the overlay
+// ✨ FIX: Only destructuring className to avoid passing incompatible props to motion.div
+>(({ className }, ref) => (
   <DialogPrimitive.Overlay asChild>
     <motion.div
       ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      // ✨ A faster transition for the overlay
-      transition={{ duration: 0.2, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
         "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm",
         className
       )}
-      {...props}
     />
   </DialogPrimitive.Overlay>
 ))
@@ -46,30 +35,31 @@ const DialogContent = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
   <DialogPortal>
-      <DialogOverlay />
-      {/* ✨ Animate the dialog content */}
-      <DialogPrimitive.Content asChild>
-        <motion.div
-          ref={ref}
-          // ✨ More subtle initial state
-          initial={{ opacity: 0, scale: 0.98, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.98, y: 10 }}
-          // ✨ Delayed and quicker transition for a snappier feel
-          transition={{ delay: 0.1, duration: 0.2, ease: "easeOut" }}
-          className={cn(
-            "relative z-50 w-full max-w-lg rounded-xl bg-white p-6 shadow-lg",
-            className
-          )}
-          {...props}
-        >
-          {children}
-          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-            <X className="h-5 w-5" />
-            <span className="sr-only">Close</span>
-          </DialogPrimitive.Close>
-        </motion.div>
+    <DialogOverlay />
+    {/* ✨ FIX: Wrapping DialogPrimitive.Content in motion.div to avoid type errors */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95, y: 20 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2"
+    >
+      {/* ✨ Radix props are passed here, not to the motion.div wrapper */}
+      <DialogPrimitive.Content
+        ref={ref}
+        className={cn(
+          "relative rounded-xl bg-white p-6 shadow-lg",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+          <X className="h-5 w-5" />
+          <span className="sr-only">Close</span>
+        </DialogPrimitive.Close>
       </DialogPrimitive.Content>
+    </motion.div>
   </DialogPortal>
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
