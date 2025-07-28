@@ -70,29 +70,37 @@ export default function BuilderSidebar({
       animate="visible"
     >
       <motion.div variants={itemVariants} className="mb-4">
-        <label className="text-sm font-semibold text-gray-800 mb-2 block">Presets</label>
-        <select
-          onChange={(e) => {
-            const selected = presets.find(p => p.id === e.target.value);
-            if (selected) {
-              setTitle(selected.title);
-              setMessage(selected.message);
-              setEmoji(selected.emoji);
-              setBackground(selected.background);
-              setShowButton(selected.showButton);
-              setButtonText(selected.buttonText);
-            }
-          }}
-          defaultValue=""
-          className="w-full p-3 border border-black rounded-lg bg-white text-sm"
-        >
-          {presets.map((preset) => (
-            <option key={preset.id} value={preset.id}>
-              {preset.name}
-            </option>
-          ))}
-        </select>
-      </motion.div>
+  <label className="text-sm font-semibold  mb-2 block">Presets</label>
+  <div className="relative">
+    <select
+      onChange={(e) => {
+        const selected = presets.find(p => p.id === e.target.value);
+        if (selected) {
+          setTitle(selected.title);
+          setMessage(selected.message);
+          setEmoji(selected.emoji);
+          setBackground(selected.background);
+          setShowButton(selected.showButton);
+          setButtonText(selected.buttonText);
+        }
+      }}
+      defaultValue=""
+      className="w-full p-3 pr-10 border border-black rounded-lg bg-white text-sm appearance-none cursor-pointer"
+    >
+      {presets.map((preset) => (
+        <option key={preset.id} value={preset.id}>
+          {preset.name}
+        </option>
+      ))}
+    </select>
+    {/* Custom arrow */}
+    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
+</motion.div>
 
       <motion.div variants={itemVariants} className="mb-2">
         <label className="text-sm font-semibold text-gray-800 mb-2 block">Title</label>

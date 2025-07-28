@@ -24,6 +24,34 @@ export default function AboutPage() {
           </p>
         </motion.div>
 
+        {/* ✨ New contact section */}
+        <motion.div
+          className="mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <p className="text-slate-600">
+            Have suggestions or improvements?{' '}
+            <a
+              href="https://x.com/ashishgogula"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 font-semibold underline hover:text-blue-800"
+            >
+              DM me on X 
+            </a>
+             {' '}or visit my{' '}  <a
+              href="https://ashishgogula.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 font-semibold underline hover:text-blue-800"
+            >
+             Website
+            </a>.
+          </p>
+        </motion.div>
+
         <motion.div 
           className="mt-16 text-left p-8 bg-slate-50/70 rounded-2xl"
           initial={{ opacity: 0, y: 30 }}
@@ -38,6 +66,8 @@ export default function AboutPage() {
             I believe it can be more. A great 404 page can be a reflection of a brand's personality. It can be helpful, funny, or just beautiful. It's an opportunity to keep users engaged, even when they're lost. Oopsly is a simple tool to help developers and designers do just that, without the hassle.
           </p>
         </motion.div>
+
+        
 
         <motion.div 
           className="mt-12"
@@ -59,25 +89,7 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* ✨ New contact section */}
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
-          <p className="text-slate-600">
-            Have suggestions or improvements?{' '}
-            <a
-              href="https://x.com/ashishgogula"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 font-semibold underline hover:text-blue-800"
-            >
-              DM me on X
-            </a>.
-          </p>
-        </motion.div>
+        
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

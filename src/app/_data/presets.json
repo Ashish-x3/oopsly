@@ -100,16 +100,6 @@
     "buttonText": "Go Back"
   },
   {
-    "id": "minimal-dark",
-    "name": "Minimal Dark",
-    "title": "404 — Page Not Found",
-    "message": "Sorry, the page you’re looking for doesn’t exist.",
-    "emoji": "🚫",
-    "background": "bg-neutral-900 text-white",
-    "showButton": true,
-    "buttonText": "Go Home"
-  },
-  {
     "id": "clean-white",
     "name": "Clean White",
     "title": "This Page Doesn’t Exist",

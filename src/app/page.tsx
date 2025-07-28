@@ -187,7 +187,7 @@ export default function Home() {
           className="text-xl text-slate-600 mb-12 max-w-xl mx-auto leading-relaxed"
           variants={itemVariants}
         >
-          Craft a better 404 page in seconds. Customize the vibe with emojis and colors, and export developer-ready code. Give your users a better dead end.
+          Craft a better 404 page in <b className='text-slate-800'>seconds</b>. Customize the vibe with emojis and colors, and export developer-ready code. Give your users a better dead end 🚧.
         </motion.p>
 
          <motion.div 

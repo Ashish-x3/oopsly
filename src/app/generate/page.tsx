@@ -30,11 +30,9 @@ export default function GeneratePage() {
 
     return (
         <div className="min-h-screen bg-slate p-4 md:p-6 flex items-center justify-center">
-            <motion.div
+            <div
                 className="w-full max-w-7xl bg-white/80 backdrop-blur-sm border border-black shadow-[0_8px_30px_rgba(99,102,241,0.3)] flex flex-col h-[90vh]"
-                variants={pageVariants}
-                initial="hidden"
-                animate="visible"
+
             >
                 <TopBar
                     title={title}
@@ -82,7 +80,9 @@ export default function GeneratePage() {
                         />
                     </div>
                 </div>
-            </motion.div>
+            </div>
+            
         </div>
+        
     );
 }

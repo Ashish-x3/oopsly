@@ -47,21 +47,21 @@ export default function TopBar({
       : "";
 
     const blockCode = `
-<div className="min-h-screen flex flex-col items-center justify-center text-center p-4${bgClass}" ${bgStyle}>
-  <div className="text-8xl md:text-9xl mb-6">${emoji}</div>
-  <h1 className="text-3xl font-bold mt-4">${title}</h1>
-  <p className="text-lg text-gray-600 mt-2">${message}</p>${buttonHtml}
-</div>
+        <div className="min-h-screen flex flex-col items-center justify-center text-center p-4${bgClass}" ${bgStyle}>
+          <div className="text-8xl md:text-9xl mb-6">${emoji}</div>
+          <h1 className="text-3xl font-bold mt-4">${title}</h1>
+          <p className="text-lg text-gray-600 mt-2">${message}</p>${buttonHtml}
+        </div>
     `.trim();
 
     const componentCode = `
-import React from 'react';
+        import React from 'react';
 
-export default function NotFoundPage() {
-  return (
-    ${blockCode.replace(/\n/g, '\n    ')}
-  );
-}
+        export default function NotFoundPage() {
+          return (
+            ${blockCode.replace(/\n/g, '\n    ')}
+          );
+        }
     `.trim();
 
     setJsxBlockCode(blockCode);
@@ -84,6 +84,9 @@ export default function NotFoundPage() {
       <div className="flex gap-3">
         <Link href="/" className="text-sm px-3 py-1 rounded-md border border-black hover:bg-gray-100 flex items-center">
           Home
+        </Link>
+        <Link href="/about" className="text-sm px-3 py-1 rounded-md border border-black hover:bg-gray-100 flex items-center">
+          About
         </Link>
         <button
           onClick={() => setIsFullscreen(!isFullscreen)}
